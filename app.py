@@ -3,6 +3,7 @@ from flask import Flask
 from flask import render_template, request
 from werkzeug.security import generate_password_hash
 import config
+import db
 
 app = Flask(__name__)
 app.secret_key = config.secret_key
@@ -26,9 +27,7 @@ def create():
 
     try:
         sql = "INSERT INTO users (username, password_hash) VALUES (?, ?)"
-        db = sqlite3.connect("database.db")
         db.execute(sql, [username, password_hash])
-        db.close()
     except sqlite3.IntegrityError:
         return "VIRHE: tunnus on jo varattu"
 
