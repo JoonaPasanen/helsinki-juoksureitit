@@ -2,8 +2,10 @@ import sqlite3
 from flask import Flask
 from flask import render_template, request
 from werkzeug.security import generate_password_hash
+import config
 
 app = Flask(__name__)
+app.secret_key = config.secret_key
 
 @app.route("/")
 def index():

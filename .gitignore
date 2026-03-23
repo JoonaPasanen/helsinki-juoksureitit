@@ -1,3 +1,4 @@
 tikawe
 __pycache__
 database.db
+config.py
