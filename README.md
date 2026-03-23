@@ -1,5 +1,11 @@
 # Helsinki juoksureitit
 
+Sovelluksen käynnistys:
+
+- Sovellus olettaa tietokannan olevan luotu schema.sql mukaisesti ja olevan nimetty database.db.
+
+Sovelluksen sisältö:
+
 - Sovelluksessa käyttäjät pystyvät jakamaan juoksureittejä. Reitissä lukee pituus, vaikeustaso ja kuvaus.
 - Käyttäjä pystyy luomaan tunnuksen ja kirjautumaan sisään sovellukseen.
 - Käyttäjä pystyy lisäämään omia reittejä ja muokkaamaan ja poistamaan niitä.
