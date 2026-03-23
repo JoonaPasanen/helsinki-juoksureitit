@@ -5,7 +5,26 @@
   </head>
 
   <body>
-    <h1>Etusivu</h1>
-    <p><b>Tervetuloa</b> <i>sovellukseen</i>!</p>
+    {% if session.username %}
+    <p>Olet kirjautunut nimellä {{ session.username }}</p>
+    <p>
+      <a href="/logout">Kirjaudu ulos</a>
+    </p>
+    {% else %}
+    <form action="/login" method="post">
+      <p>
+        Tunnus: <br />
+        <input type="text" name="username" />
+      </p>
+      <p>
+        Salasana: <br />
+        <input type="password" name="password" />
+      </p>
+      <input type="submit" value="Kirjaudu" />
+    </form>
+    <p>
+      <a href="/register">Rekisteröi käyttäjä</a>
+    </p>
+    {% endif %}
   </body>
 </html>
